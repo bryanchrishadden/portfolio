@@ -41,14 +41,10 @@ h3 {
 
 /* audio::-webkit-media-controls-timeline,
 video::-webkit-media-controls-timeline {
-
-
     display: none;
 }
 audio::-webkit-media-controls,
 video::-webkit-media-controls {
-
-
     display: none;
 } */
 
@@ -70,12 +66,29 @@ video::-webkit-media-controls {
 video.large {
   width: 40vw;
   height: 40vh;
+  transition-timing-function: ease-in-out;
+  transition-duration: .35s;
+  border-radius: 7px;
 }
 
 video.small {
   width: 32vw;
   justify-self: center;
   height: 40vh;
+  transition-timing-function: ease-in-out;
+  transition-duration: .35s;
+  border-radius: 7px;
+}
+
+video.large:hover {
+  width: 41.5vw;
+  height: 41.5vh;
+}
+
+video.small:hover {
+  width: 35vw;
+  justify-self: center;
+  height: 43vh;
 }
 
 /* Developer Content */
