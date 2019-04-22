@@ -14,7 +14,6 @@ class App extends Component {
 
   playMe = (event) => {
     const id = event.target.id
-    console.log(id)
     switch (id) {
       case "developer":
         return document.getElementById('vidone').play()
@@ -27,7 +26,6 @@ class App extends Component {
 
   stopMe = (event) => {
     const id = event.target.id
-    console.log(id)
     switch (id) {
       case "developer":
         return document.getElementById('vidone').pause()
@@ -36,7 +34,6 @@ class App extends Component {
       case "designtwo":
         return document.getElementById('vidthree').pause()
     }
-
   }
 
   render() {
@@ -51,7 +48,7 @@ class App extends Component {
           <div id="developer" className="developer" onMouseEnter={this.playMe} onMouseLeave={this.stopMe}>
             <div className="column">
               <h2><strong>International Shipping Tracker</strong> - Porsche</h2>
-              <video id="vidone" className="large" width="320" height="240">
+              <video id="vidone" className="large" controls preload="auto">
                 <source src={VT} type="video/mp4"></source>
                 Your browser does not support the video tag.
             </video>
@@ -63,7 +60,7 @@ class App extends Component {
           <div className="designer">
             <div id="designone" className="ux-column" onMouseEnter={this.playMe} onMouseLeave={this.stopMe}>
               <h2>Porsche - Car Tracker Entrypoint - Design</h2>
-              <video id="vidtwo" className="small" width="320" height="240" controls>
+              <video id="vidtwo" className="small" controls preload="auto">
                 <source className="large" src={EntryPro} type="video/mp4"></source>
                 Your browser does not support the video tag.
             </video>
@@ -76,7 +73,7 @@ class App extends Component {
             </div>
             <div id="designtwo" className="ux-column" onMouseEnter={this.playMe} onMouseLeave={this.stopMe}>
               <h2>Porsche - Car Tracker Entrypoint - App</h2>
-              <video id="vidthree" className="small" width="320" height="240" controls>
+              <video id="vidthree" className="small" controls preload="auto">
                 <source className="large" src={EntryApp} type="video/mp4"></source>
                 Your browser does not support the video tag.
             </video>
