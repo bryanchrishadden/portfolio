@@ -37,7 +37,7 @@ class vesselTrackerContent extends Component {
                     each of our users. <br />
                 </h2>
                 <div className="demo">
-                    <ReactPlayer url={VesselTrackerVideo} width="70vw" height="40vw" playing={true} loop={true}/>
+                    <ReactPlayer url={VesselTrackerVideo} width="61vw" height="40vw" playing={true} loop={true} />
                 </div>
             </div>
         )

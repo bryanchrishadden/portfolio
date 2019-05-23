@@ -252,7 +252,7 @@ video::-webkit-media-controls {
 /* Video Components*/
 .project .demo {
   position: absolute;
-  left: -18vh;
+  left: 0vh;
 }
 
 .project .demo div {

@@ -37,8 +37,8 @@ class vesselTrackerContent extends Component {
                     in a way that made it very easy for seasoned salesmen/saleswomen to get car info quickly. <br />
                 </h2>
                 <div className="demo">
-                    {/* <ReactPlayer url={vtProtoypeVideo} width="70vw" height="40vw" playing={true} loop={true} /> */}
-                    <ReactPlayer url={vtAppVideo} width="70vw" height="40vw" playing={true} loop={true} />
+                    {/* <ReactPlayer url={vtProtoypeVideo} width="61vw" height="40vw" playing={true} loop={true} /> */}
+                    <ReactPlayer url={vtAppVideo} width="61vw" height="40vw" playing={true} loop={true} />
                 </div>
             </div>
         )
