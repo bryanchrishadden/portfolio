@@ -1,44 +1,3 @@
-.App {
-  text-align: center;
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 20vh 80vh;
-  font-family: 'Roboto', sans-serif;
-}
-
-h1 {
-  /* margin: 3.3rem 0; */
-  font-size: 3em;
-}
-
-h2 {
-  font-weight: 500;
-  font-size: 2em;
-  font-weight: 900;
-}
-
-h3 {
-  font-weight: 400;
-  width: 40vw;
-  font-family: 'PT Serif', serif;
-  font-size: 18px;
-  justify-self: center;
-}
-
-.column {
-  justify-self: center;
-}
-
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: rgba(128, 128, 128, .025);
-  width: 100vw;
-  height: 100vh;
-}
-
 /* audio::-webkit-media-controls-timeline,
 video::-webkit-media-controls-timeline {
     display: none;
@@ -47,63 +6,116 @@ audio::-webkit-media-controls,
 video::-webkit-media-controls {
     display: none;
 } */
+* {
+  box-sizing: border-box !important;
+  -webkit-font-smoothing: antialiased;
+}
 
-/* Header */
+/*App Component*/
+.App {
+  text-align: center;
+  display: grid;
+  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.column {
+  justify-self: center;
+}
+
+/* Header Component*/
 .header {
-  border-radius: 7px;
+  background-color: #2098D1;
+  color: white;
   box-shadow: 0 1px 2px 0 rgba(11, 11, 11, 0.1);
   display: grid;
+  height: 55em;
 }
 
-.subtitle {
-  justify-self: center;
-  margin-top: -2.35em;
-  font-family: 'Roboto', sans-serif;
-
+.logo-and-nav-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-/* Video Styles*/
-video.large {
-  width: 40vw;
-  height: 40vh;
-  transition-timing-function: ease-in-out;
-  transition-duration: .35s;
-  border-radius: 7px;
+/*Header Intro Text*/
+.intro {
+  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+  text-align: left;
+  position: absolute;
+  top: 15em;
+  left: 13.5vw;
+  line-height: 4rem;
 }
 
-video.small {
-  width: 32vw;
-  justify-self: center;
-  height: 40vh;
-  transition-timing-function: ease-in-out;
-  transition-duration: .35s;
-  border-radius: 7px;
+.intro span {
+  text-decoration: line-through;
+  opacity: .4;
 }
 
-video.large:hover {
-  width: 41.5vw;
-  height: 41.5vh;
+.intro a {
+  color: #045F8C;
+  opacity: .8;
+  font-weight: 800;
+  text-decoration: none;
 }
 
-video.small:hover {
-  width: 35vw;
-  justify-self: center;
-  height: 43vh;
+.intro h2 {
+  font-weight: 350;
 }
 
-/* Developer Content */
+/* Logo Componenet*/
+.logo {
+  color: white;
+  text-decoration: none;
+  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.logo h2 {
+  font-weight: 900;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.logo h3 {
+  font-weight: 300;
+  margin-top: .25rem;
+}
+
+.logo .icon {
+  height: 3em;
+  width: 3em;
+  position: absolute;
+  top: 3em;
+  left: 13vw;
+}
+
+.logo .text {
+  position: absolute;
+  top: 1.7em;
+  left: 16.25vw;
+}
+
+/* Card Components */
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(128, 128, 128, .025);
+  padding: 0 25vw;
+  margin: 0 0 5vh;
+}
+
 .content .developer {
   display: grid;
-  margin: 5em 0 5em;
   width: 46vw;
   height: 65vh;
-  border-radius: 7px;
-  box-shadow: 0 3px 3px 0 rgba(11, 11, 11, 0.1);
-  justify-self: center;
-  transition-timing-function: ease-in-out;
-  transition-duration: .35s;
   padding: 2em 2em;
+  margin: 5em 0 5em;
+  border-radius: 7px;
+  justify-self: center;
+  transition-duration: .35s;
   background-color: rgb(255, 255, 255);
+  transition-timing-function: ease-in-out;
+  box-shadow: 0 3px 3px 0 rgba(11, 11, 11, 0.1);
 }
 
 .content .developer:hover {
@@ -111,28 +123,36 @@ video.small:hover {
   width: 47vw;
 }
 
-/* Designer Content */
-.content .designer {
+.content .cards-wrapper {
   display: grid;
-  grid-template-columns: 50vw 50vw;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  grid-gap: 1em;
+  margin-top: 2em;
 }
 
 .ux-column {
-  margin: 0em 0 5em;
+  margin: 0;
   padding: 3em 0;
-  width: 40vw;
-  /* height: 100vh; */
+  width: 25vw;
+  height: 28vh;
+  font-weight: 800;
+  cursor: pointer;
   justify-self: center;
-  transition-timing-function: ease-in-out;
   transition-duration: .4s;
-  /* display: grid; */
+  text-decoration: none;
   background-color: rgb(255, 255, 255);
+  transition-timing-function: ease-in-out;
 }
 
 .ux-column:hover {
   border-radius: 3px;
   box-shadow: 0 3px 3px 3px rgba(11, 11, 11, 0.1);
+}
+
+.ux-column h2 {
+  position: relative;
+  top: 17.5vh;
 }
 
 .descrip {
@@ -141,4 +161,105 @@ video.small:hover {
 
 .descrip h3 {
   width: 25vw;
+}
+
+/* Project Component */
+.project {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: rgba(128, 128, 128, .025);
+  padding: 0 25vw;
+}
+
+.project .description {
+  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1.15em;
+  text-align: left;
+  position: absolute;
+  line-height: 3rem;
+}
+
+.project .description span {
+  font-weight: 900;
+  /* opacity: .4; */
+}
+
+.project .description h2 {
+  font-weight: 400;
+  text-align: center;
+}
+
+.project .description .img {
+  margin: 0;
+  height: 28vh;
+  font-weight: 800;
+  justify-self: center;
+  -webkit-transition-duration: .4s;
+  transition-duration: .4s;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/* project header */
+.project .img h2 {
+  position: relative;
+  top: 25vh;
+  color: grey;
+}
+
+/* project subheader */
+.project .description .tech-stack {
+  font-weight: 400;
+  color: black;
+}
+
+.project .description .tech-stack span {
+  font-weight: 900;
+  color: black;
+  opacity: 1 !important;
+}
+
+/* project "go back" button */
+.project .description .back  {
+  font-weight: 900;
+  top: 8vh;
+  left: 0vw;
+  font-size: .9em;
+  padding: 1em 2em;
+  position: absolute;
+  box-shadow: 0 1px 1px 1px rgba(11, 11, 11, 0.04);
+  cursor: pointer;
+  color: #2098D1;
+}
+
+.project .description .back a {
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* project description text*/
+.project .description .text {
+  text-align: left;
+  font-size: 2rem;
+  line-height: 3.2rem;
+  color: #3b3a3a;
+  font-weight: 300;
+}
+
+/* Video Components*/
+.project .demo {
+  position: absolute;
+  left: -18vh;
+}
+
+.project .demo div {
+  margin: 0em 0 0 0;
+}
+
+.project .demo h1 {
+  text-align: center;
+  margin: 1em 0 0em 0em;
 }

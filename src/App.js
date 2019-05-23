@@ -1,94 +1,64 @@
 import React, { Component } from 'react';
-import VT from './assets/videos/vesseltracker-app.mp4'
-import EntryApp from './assets/videos/entry-app.mp4'
-import EntryPro from './assets/videos/entry-prototype.mp4'
+import Content from './Components/Content'
+import Project from './Components/Project'
+import Logo from './Components/Logo'
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { showSelectedProject } from './redux/actions';
+
 import './App.css';
 
 class App extends Component {
-
   constructor(props) {
     super(props)
-    this.playMe = this.playMe.bind(this)
-    this.stopMe = this.stopMe.bind(this)
+    this.handleCardClick = this.handleCardClick.bind(this)
   }
 
-  playMe = (event) => {
-    const id = event.target.id
-    switch (id) {
-      case "developer":
-        return document.getElementById('vidone').play()
-      case "designone":
-        return document.getElementById('vidtwo').play()
-      case "designtwo":
-        return document.getElementById('vidthree').play()
-    }
-  }
+  handleCardClick = (event) => {
+    event.preventDefault();
+    const { showSelectedProject } = this.props
+    const portfolioProjectName = event.target.id
 
-  stopMe = (event) => {
-    const id = event.target.id
-    switch (id) {
-      case "developer":
-        return document.getElementById('vidone').pause()
-      case "designone":
-        return document.getElementById('vidtwo').pause()
-      case "designtwo":
-        return document.getElementById('vidthree').pause()
-    }
+    showSelectedProject(portfolioProjectName)
   }
 
   render() {
+    const { selectedProject } = this.props
+    const showHomepage = selectedProject === "none"
+    const DetermineHomepageOrProject = showHomepage ? <Content handleCardClick={this.handleCardClick} /> : <Project />
+
     return (
       <div className="App">
         <div className="header">
-          <h1>Bryan Hadden's Portfolio </h1>
-          <h3 className="subtitle"><strong>Fullstack Designer & Developer</strong></h3>
-
-        </div>
-        <div className="content">
-          <div id="developer" className="developer" onMouseEnter={this.playMe} onMouseLeave={this.stopMe}>
-            <div className="column">
-              <h2><strong>International Shipping Tracker</strong> - Porsche</h2>
-              <video id="vidone" className="large" controls preload="auto">
-                <source src={VT} type="video/mp4"></source>
-                Your browser does not support the video tag.
-            </video>
-              <h3>Tech Stack:  <strong>React, Redux, Jest, Google Maps API, Node</strong></h3>
-              <h3> This is application is currently live in every port across the world that tracks shipping for Porsche Cars.
-                Over an 8 month period with bi-weekly meetings with the Porsche team.</h3>
-            </div>
+          <div className="logo-and-nav-wrapper">
+            <Logo />
+            <div></div>
           </div>
-          <div className="designer">
-            <div id="designone" className="ux-column" onMouseEnter={this.playMe} onMouseLeave={this.stopMe}>
-              <h2>Porsche - Car Tracker Entrypoint - Design</h2>
-              <video id="vidtwo" className="small" controls preload="auto">
-                <source className="large" src={EntryPro} type="video/mp4"></source>
-                Your browser does not support the video tag.
-            </video>
-              <h3>Tech Stack:  <strong>Pen & Paper, Photoshop, Illistrator, Sketch, InVision</strong></h3>
-              <div className="descrip">
-                <h3>
-                  This is the prototype for an application that every porsche customer, as well as every porsche dealer will use to access the cars they purchase.
-              </h3>
-              </div>
-            </div>
-            <div id="designtwo" className="ux-column" onMouseEnter={this.playMe} onMouseLeave={this.stopMe}>
-              <h2>Porsche - Car Tracker Entrypoint - App</h2>
-              <video id="vidthree" className="small" controls preload="auto">
-                <source className="large" src={EntryApp} type="video/mp4"></source>
-                Your browser does not support the video tag.
-            </video>
-              <h3>Tech Stack:  <strong>React, Redux, Jest, Redux-Persist, Node, Express</strong></h3>
-              <div className="descrip">
-                <h3>
-                  This is the actual application that every porsche customer, as well as every porsche dealer will use to access the cars they purchase.
-                </h3>
-              </div>
-            </div>
+          <div className="intro" id="intro">
+            <h1>Hey, I'm a fullstack designer & software developer.<br />
+              I can solve <span>all some one of your</span> problems, ok?
+            </h1>
+            <h2>
+              I design, build & sometimes rescue applications.<br />
+              Have a project, idea or problem you'd like to discuss?<br />
+              Shoot me an email <a href="mailto: bryanchrishadden@gmail.com">hey@bryanhadden.com</a>
+              <br />
+            </h2>
           </div>
         </div>
+        {DetermineHomepageOrProject}
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return state.reducers;
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ showSelectedProject }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
