@@ -25,20 +25,20 @@ class vesselTrackerContent extends Component {
                 <h2 className="tech-stack"><span>Tech Stack: </span>Javascript, React, Angular, PHP, Google Cloud, Sketch, Photoshop, InVision</h2>
                 <a href="/"><button className="back">Go Back</button></a>
                 <h2 className="text">
-                    I could not anything from HomeDepot with me, however I can describe what I did.<br />
-                    The framework I maintained is still in use by 700+ engineers and 200+ designers <br />
+                    I could not take anything from HomeDepot with me, however I can describe what I did.
+                    The framework I maintained is still in use by 700+ engineers and 200+ designers 
                     to build all non-customer facing applications.
                 </h2>
                 <h2 className="text">
-                    I would get requests to build components from different departments (like payments),<br />
-                    working closeley with senior managment and business partners I would prioritize & triage<br />
-                    those requests. 
+                    I would get requests to build components from different departments (like payments),
+                    working closely with senior managment and business partners I would prioritize and triage
+                    those requests.
                 </h2>
                 <h2 className="text">
-                    The process started with UX (pain points research, user testing, script writing), <br />
-                    then  Iwould present to leadership. After approval then came design, building the app in <br />
-                    plain javascript, then wrapping that component in React and Angular. lastly, pushing<br />
-                    to the internal pipeline so teams could pick and choose what they needed a-la-carte.<br />
+                    The process started with UX (pain points research, user testing, script writing), 
+                    after which I would present those assets to leadership. After approval then came design, building the app in 
+                    plain javascript, then wrapping that component in React and Angular. lastly, pushing
+                    to the internal pipeline so teams could pick and choose what they needed a-la-carte.
                 </h2>
             </div>
         )

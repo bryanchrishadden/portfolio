@@ -32,9 +32,8 @@ class vesselTrackerContent extends Component {
                     app needed to be mobile friendly & 70inch TV friendly.
                 </h2>
                 <h2 className="text">
-                    The users include  adiverse list: port managers, logistics department, even C Suite execs.  <br />
-                    Our real challenge here was making sure the presentation layer was not overwhelming to<br />
-                    each of our users. <br />
+                    The users were diverse: port managers, the logistics department, even C Suite execs.  <br />
+                    The real challenge here was making sure the presentation layer was not overwhelming to each of our users. <br />
                 </h2>
                 <div className="demo">
                     <ReactPlayer url={VesselTrackerVideo} width="61vw" height="40vw" playing={true} loop={true} />

@@ -28,13 +28,12 @@ class vesselTrackerContent extends Component {
                 <a href="/"><button className="back">Go Back</button></a>
                 <h2 className="text">
                     Porsche wanted a more modern experience for delearships tracking their cars/orders, <br />
-                    they wanted an very simple design that was easy to understand at a glance. Working remotly, <br />
-                    I designed the app which was then presented to Porsche leadership.
+                    they wanted a modern, simple design that was easy to understand at a glance. Working remotely, I designed the app which was then presented to Porsche leadership.
                 </h2>
                 <h2 className="text">
-                    We got approval and I started the build, of which the main challenge was keeping things<br />
-                    simple for team memebrs who may not be very technical, while also designing the data flow <br />
-                    in a way that made it very easy for seasoned salesmen/saleswomen to get car info quickly. <br />
+                    After we recieved approval to move forward,and I started the build, of which the main challenge was keeping things 
+                    simple for team members who may not be very technical, while also designing the data flow in a 
+                    way that made it very easy for seasoned salesmen/saleswomen to get car info quickly. <br />
                 </h2>
                 <div className="demo">
                     {/* <ReactPlayer url={vtProtoypeVideo} width="61vw" height="40vw" playing={true} loop={true} /> */}
