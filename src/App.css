@@ -11,149 +11,16 @@ video::-webkit-media-controls {
   -webkit-font-smoothing: antialiased;
 }
 
-/*App Component*/
-.App {
-  text-align: center;
-  display: grid;
-  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-
 .column {
   justify-self: center;
 }
 
-/* Header Component*/
-.header {
-  background-color: #2098D1;
-  color: white;
-  box-shadow: 0 1px 2px 0 rgba(11, 11, 11, 0.1);
-  display: grid;
-  height: 55em;
-}
-
-.logo-and-nav-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-/*Header Intro Text*/
-.intro {
-  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 1.25em;
-  text-align: left;
-  position: absolute;
-  top: 15em;
-  left: 13.5vw;
-  line-height: 4rem;
-}
-
-.intro span {
-  text-decoration: line-through;
-  opacity: .4;
-}
-
-.intro a {
-  color: #045F8C;
-  opacity: .8;
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.intro h2 {
-  font-weight: 350;
-}
-
-/* Logo Componenet*/
-.logo {
-  color: white;
-  text-decoration: none;
-  font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-}
-
-.logo h2 {
-  font-weight: 900;
-  text-align: left;
-  margin-bottom: 0;
-}
-
-.logo h3 {
-  font-weight: 300;
-  margin-top: .25rem;
-}
-
-.logo .icon {
-  height: 3em;
-  width: 3em;
-  position: absolute;
-  top: 3em;
-  left: 13vw;
-}
-
-.logo .text {
-  position: absolute;
-  top: 1.7em;
-  left: 16.25vw;
-}
-
-/* Card Components */
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: rgba(128, 128, 128, .025);
-  padding: 0 25vw;
-  margin: 0 0 5vh;
-}
-
-.content .developer {
-  display: grid;
-  width: 46vw;
-  height: 65vh;
-  padding: 2em 2em;
-  margin: 5em 0 5em;
-  border-radius: 7px;
-  justify-self: center;
-  transition-duration: .35s;
-  background-color: rgb(255, 255, 255);
-  transition-timing-function: ease-in-out;
-  box-shadow: 0 3px 3px 0 rgba(11, 11, 11, 0.1);
-}
-
-.content .developer:hover {
-  box-shadow: 0 3px 3px 3px rgba(11, 11, 11, 0.2);
-  width: 47vw;
-}
-
-.content .cards-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 1em;
-  margin-top: 2em;
-}
-
-.ux-column {
-  margin: 0;
-  padding: 3em 0;
-  width: 25vw;
-  height: 30vh;
-  font-weight: 800;
-  cursor: pointer;
-  justify-self: center;
-  transition-duration: .4s;
-  text-decoration: none;
-  background-color: rgb(255, 255, 255);
-  transition-timing-function: ease-in-out;
-}
-
-.ux-column:hover {
-  border-radius: 3px;
-  box-shadow: 0 3px 3px 3px rgba(11, 11, 11, 0.1);
-}
+/* .ux-column
 
 .ux-column h2 {
   position: relative;
   top: 17.5vh;
-}
+} */
 
 .descrip {
   display: grid;
@@ -165,17 +32,13 @@ video::-webkit-media-controls {
 
 /* Project Component */
 .project {
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: rgba(128, 128, 128, .025);
-  padding: 0 25vw;
+  padding: 0 25em;
 }
 
 .project .description {
   font-family: "Maison Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 1.15em;
   text-align: left;
-  position: absolute;
   line-height: 3rem;
 }
 
@@ -190,24 +53,21 @@ video::-webkit-media-controls {
 }
 
 .project .description .img {
-  margin: 0;
-  height: 28vh;
+  min-height: 15em;
   font-weight: 800;
   justify-self: center;
-  -webkit-transition-duration: .4s;
   transition-duration: .4s;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   text-decoration: none;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
+  padding-top: 5em;
 }
 
 /* project header */
 .project .img h2 {
-  position: relative;
-  top: 25vh;
-  color: grey;
+    color: grey;
+    margin-top: 6em;
 }
 
 /* project subheader */
@@ -225,19 +85,14 @@ video::-webkit-media-controls {
 /* project "go back" button */
 .project .description .back  {
   font-weight: 900;
-  top: 8vh;
-  left: 0vw;
+  box-shadow: 0 1px 1px 1px rgba(11, 11, 11, 0.04);
+  top: 50.5rem;
   font-size: .9em;
   padding: 1em 2em;
-  position: absolute;
-  box-shadow: 0 1px 1px 1px rgba(11, 11, 11, 0.04);
   cursor: pointer;
   color: #2098D1;
-}
-
-.project .description .back a {
-  text-decoration: none;
-  border-radius: 5px;
+  margin-left: 5.5rem;
+  position: absolute;
 }
 
 /* project description text*/
@@ -247,13 +102,7 @@ video::-webkit-media-controls {
   line-height: 3.2rem;
   color: #3b3a3a;
   font-weight: 300;
-}
-
-/* Video Components*/
-.project .demo {
-  position: absolute;
-  left: 8%;
-  /* left: 0vh; */
+  margin-left: 5.5rem;
 }
 
 .project .demo div {

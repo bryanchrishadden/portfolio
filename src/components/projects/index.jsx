@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-
-import VesselTrackerContent from './projects/vessel-tracker-content'
-import VTPrototypeContent from './projects/vt-prototype-content'
-import HDframeworkContent from './projects/hd-framework-content'
-import '../App.css';
+import VesselTrackerContent from './vessel-tracker-content'
+import VTPrototypeContent from './vt-prototype-content'
+import InternalFramework from './internal-framework'
 
 class Project extends Component {
     render() {
@@ -20,7 +18,7 @@ class Project extends Component {
                 ComponentToShow = <VTPrototypeContent />
                 break;
             case "hd_internalFramework":
-                ComponentToShow = <HDframeworkContent />
+                ComponentToShow = <InternalFramework />
                 break;
             default:
                 ComponentToShow = "none"

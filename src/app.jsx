@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
-import Content from './Components/Content'
-import Project from './Components/Project'
-import Logo from './Components/Logo'
-
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { showSelectedProject } from './redux/actions';
-
-import './App.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { showSelectedProject } from './redux/actions'
+import Content from './components/content'
+import Project from './components/projects'
+import Logo from './components/logo'
+import { AppContainer, Header, Intro } from './styles'
+import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -15,12 +14,11 @@ class App extends Component {
     this.handleCardClick = this.handleCardClick.bind(this)
   }
 
-  handleCardClick = (event) => {
-    event.preventDefault();
+  handleCardClick = ({ target: { id: projectToShow } }) => {
     const { showSelectedProject } = this.props
-    const portfolioProjectName = event.target.id
-
-    showSelectedProject(portfolioProjectName)
+    if (projectToShow) {
+      showSelectedProject(projectToShow)
+    }
   }
 
   render() {
@@ -29,13 +27,13 @@ class App extends Component {
     const DetermineHomepageOrProject = showHomepage ? <Content handleCardClick={this.handleCardClick} /> : <Project />
 
     return (
-      <div className="App">
-        <div className="header">
+      <AppContainer>
+        <Header>
           <div className="logo-and-nav-wrapper">
             <Logo />
             <div></div>
           </div>
-          <div className="intro" id="intro">
+          <Intro className="intro" id="intro">
             <h1>Hey, I'm a fullstack designer & software developer.<br />
               I can solve <span>all some one of your</span> problems, ok?
             </h1>
@@ -45,20 +43,20 @@ class App extends Component {
               Shoot me an email <a href="mailto: bryanchrishadden@gmail.com">hey@bryanhadden.com</a>
               <br />
             </h2>
-          </div>
-        </div>
+          </Intro>
+        </Header>
         {DetermineHomepageOrProject}
-      </div>
-    );
+      </AppContainer>
+    )
   }
 }
 
 function mapStateToProps(state) {
-  return state.reducers;
+  return state.reducers
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ showSelectedProject }, dispatch);
+  return bindActionCreators({ showSelectedProject }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App)

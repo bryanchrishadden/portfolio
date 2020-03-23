@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './app';
 import * as serviceWorker from './serviceWorker';
 import './index.css';
 
@@ -11,7 +11,7 @@ const AppWithProvider = () => (
     <Provider store={store}>
         <App />
     </Provider>
-) 
+)
 
 ReactDOM.render(<AppWithProvider />, document.getElementById('root'));
 
